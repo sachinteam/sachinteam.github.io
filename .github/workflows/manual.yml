@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-	  - main
+      - main
 jobs:
  build:
     name: Build
@@ -20,7 +20,7 @@ jobs:
         password: AK^ggvWUe!J8#R+6MLQ*R&KQv9
         timeout: 60s
         script: | 
-         cd /home/ubuntu/auto
+         cd /home/ubuntu/auto/sachinteam.github.io
          git stash
          git pull origin master
          git status
