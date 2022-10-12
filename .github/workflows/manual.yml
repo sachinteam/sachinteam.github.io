@@ -1,0 +1,27 @@
+name: pull develop
+on:
+  push:
+    branches:
+      - master
+	  - main
+jobs:
+ build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v1
+    - name: Pull on develop
+      uses: appleboy/ssh-action@master
+      with:
+      #ssh:
+        host: 203.129.220.83
+        username: ubuntu
+        password: AK^ggvWUe!J8#R+6MLQ*R&KQv9
+        timeout: 60s
+        script: | 
+         cd /home/ubuntu/auto
+         git stash
+         git pull origin master
+         git status
+         ls -la
